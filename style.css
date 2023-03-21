@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 60%;
+    font-family: "Roboto", sans-serif;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 2rem;
+    color: #fff;
+    overflow: hidden;
+}
+.container{
+    flex: 1;
+    max-width: 900px;
+    display: flex;
+    height: 600px;
+}
+.box{
+    position: relative;
+    background-size: cover;
+    object-fit: cover;
+    background-position: top center;
+    cursor: pointer;
+    flex: 1;
+    padding: 1rem;
+}
+.content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 4rem 2rem;
+    z-index: 21;
+}
+h1{
+    position: absolute;
+    bottom: 0;
+    font-size: 3.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transform-origin: 0 0;
+    transform: rotate(270deg);
+    transition: transform .1s ease;
+}
+p{
+    font-size: 1.7rem;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: opacity .15s ease;
+}
+
+.container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(15, 15, 15, .75); */
+}
+.container .active::before{
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0) 0%, #111111 100%);
+}
+
+.container .active{
+    flex: 6;
+}
+
+.container .active .content h1{
+    position: static;
+    transform: rotate(0deg);
+}
+
+.container .active .content p{
+    margin-top: 1.5rem;
+    opacity: 1;
+}
+
+
+/* &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 15, 15, .75);
+}
+&.active::before{
+        background: linear-gradient(180deg, rgba(15, 15, 15, 0) 0%, #111111 100%);
+    }
+}
+
+&.active{
+    flex: 6;
+    
+    .content{
+        h1{
+            position: static;
+            transform: rotate(0deg);
+        }
+        p{
+            margin-top: 1.5rem;
+            opacity: 1;
+        }
+    }
+} */
